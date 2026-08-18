@@ -383,15 +383,17 @@ export default function Home() {
   const [savedReturnScreen, setSavedReturnScreen] = useState<Screen>("home");
   const [lookReturnScreen, setLookReturnScreen] = useState<Screen>("confirm");
   const [answers, setAnswers] = useState<Answers>(emptyAnswers);
-  const [eyeIntensity, setEyeIntensity] = useState(
-    recommendedIntensities.eye,
-  );
-  const [blushIntensity, setBlushIntensity] = useState(
-    recommendedIntensities.blush,
-  );
-  const [glowIntensity, setGlowIntensity] = useState(
-    recommendedIntensities.glow,
-  );
+  const [eyeIntensity, setEyeIntensity] = useState<number>(
+  recommendedIntensities.eye
+);
+
+const [blushIntensity, setBlushIntensity] = useState<number>(
+  recommendedIntensities.blush
+);
+
+const [glowIntensity, setGlowIntensity] = useState<number>(
+  recommendedIntensities.glow
+);
   const [saved, setSaved] = useState<SavedLook[]>(() => {
     if (typeof window === "undefined") return [];
     try {
